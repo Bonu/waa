@@ -12,7 +12,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>calculator</servlet-name>
-    <url-pattern>calculator.do</url-pattern>
+    <url-pattern>/calculator.do</url-pattern>
   </servlet-mapping>
   
 </web-app>

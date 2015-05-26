@@ -100,7 +100,7 @@ public class Calculator extends HttpServlet {
 		request.setAttribute("product", product);
 		System.out.println("sum->"+sum);
 		System.out.println("sum->"+request.getAttribute("sum"));
-		RequestDispatcher view = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/result.jsp");
 		view.forward(request, response);
 		
 	}
