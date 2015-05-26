@@ -1,3 +1,4 @@
+<%@page errorPage="/WEB-INF/loginerror.jsp"%>  
 <!DOCTYPE html>
 <html>
 <head>
