@@ -5,7 +5,89 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2015-05-26T12:01:00Z</updated>
+  <updated>2015-05-27T15:42:00Z</updated>
+  <entry>
+    <title>Spring Cloud Consul 1.0.0.M1 Available Now</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/05/27/spring-cloud-consul-1-0-0-m1-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Spencer Gibb</name>
+    </author>
+    <id>tag:spring.io,2015-05-26:2138</id>
+    <updated>2015-05-27T15:42:00Z</updated>
+    <content type="html">&lt;p&gt;&lt;a href="https://consul.io/intro/index.html"&gt;Consul&lt;/a&gt; is a system for discovering and configuring services in your infrastructure. It was built by &lt;a href="https://hashicorp.com/"&gt;Hashicorp&lt;/a&gt;, the same smart folks that created &lt;a href="https://www.vagrantup.com"&gt;Vagrant&lt;/a&gt; and &lt;a href="https://www.packer.io"&gt;Packer&lt;/a&gt;. Consul provides services such as Service Discovery, Health Checking, Key/Value Store all while supporting multiple datacenters out of the box.&lt;/p&gt;&lt;p&gt;&lt;a href="http://projects.spring.io/spring-cloud/spring-cloud-consul"&gt;Spring Cloud Consul&lt;/a&gt; aims to bring all of those features to the &lt;a href="http://projects.spring.io/spring-cloud/"&gt;Spring Cloud&lt;/a&gt; ecosystem. The project has reached its first milestone and fresh jars are available in the &lt;a href="http://repo.spring.io/libs-milestone-local"&gt;repo.spring.io&lt;/a&gt; repository. Spring Cloud Consul provides the following features:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;p&gt;Spring Cloud Consul Discovery: An implementation of the Spring Cloud Commons &lt;a href="https://github.com/spring-cloud/spring-cloud-commons/blob/master/spring-cloud-commons/src/main/java/org/springframework/cloud/client/discovery/DiscoveryClient.java"&gt;&lt;code&gt;DiscoveryClient&lt;/code&gt;&lt;/a&gt;. Service registration and discovery are performed via the Consul &lt;a href="https://consul.io/docs/agent/http.html"&gt;HTTP API&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;Spring Cloud Consul Config: Distributed configuration via the Consul &lt;a href="https://consul.io/docs/agent/http/kv.html"&gt;Key/Value API&lt;/a&gt;. This behaves similarly to the &lt;a href="https://github.com/spring-cloud/spring-cloud-config#spring-cloud-config-client"&gt;Spring Cloud Config Client&lt;/a&gt;, but is backed by the distributed Consul KV Store.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;Spring Cloud Consul Bus: An event bus for linking services and service instances together with distributed messaging. Useful for propagating state changes across a cluster (e.g. config change events). This is implemented using the Consul &lt;a href="https://consul.io/docs/agent/http/event.html"&gt;Event API&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;Spring Cloud Consul UI: An embedded version of the &lt;a href="https://www.consul.io/intro/getting-started/ui.html"&gt;Consul Web UI&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;All of the above have the 1.0.0.M1 release tag, to get started include the following artifacts in your &lt;code&gt;pom.xml&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;dependency&amp;gt;&#xD;
+  &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+  &amp;lt;artifactId&amp;gt;spring-cloud-consul-config&amp;lt;/artifactId&amp;gt;&#xD;
+  &amp;lt;version&amp;gt;1.0.0.M1&amp;lt;/version&amp;gt;&#xD;
+&amp;lt;/dependency&amp;gt;&#xD;
+&amp;lt;dependency&amp;gt;&#xD;
+  &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+  &amp;lt;artifactId&amp;gt;spring-cloud-consul-discovery&amp;lt;/artifactId&amp;gt;&#xD;
+  &amp;lt;version&amp;gt;1.0.0.M1&amp;lt;/version&amp;gt;&#xD;
+&amp;lt;/dependency&amp;gt;&#xD;
+&amp;lt;dependency&amp;gt;&#xD;
+  &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+  &amp;lt;artifactId&amp;gt;spring-cloud-consul-bus&amp;lt;/artifactId&amp;gt;&#xD;
+  &amp;lt;version&amp;gt;1.0.0.M1&amp;lt;/version&amp;gt;&#xD;
+&amp;lt;/dependency&amp;gt;&#xD;
+&amp;lt;dependency&amp;gt;&#xD;
+  &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+  &amp;lt;artifactId&amp;gt;spring-cloud-consul-ui&amp;lt;/artifactId&amp;gt;&#xD;
+  &amp;lt;version&amp;gt;1.0.0.M1&amp;lt;/version&amp;gt;&#xD;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Follow &lt;a href="https://github.com/spring-cloud/spring-cloud-consul/blob/master/docs/src/main/asciidoc/spring-cloud-consul.adoc#install-consul"&gt;the documentation&lt;/a&gt; to make sure Consul is installed and running.&lt;/p&gt;&lt;p&gt;A sample application that might look like the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@SpringBootApplication&#xD;
+@EnableDiscoveryClient&#xD;
+@EnableConsulUi&#xD;
+@RestController&#xD;
+public class SampleApp2 {&#xD;
+&#xD;
+  @RequestMapping(&amp;quot;/&amp;quot;)&#xD;
+  public String hello() {&#xD;
+    return &amp;quot;Hello World&amp;quot;;&#xD;
+  }&#xD;
+&#xD;
+  public static void main(String[] args) {&#xD;
+    SpringApplication.run(SampleApplication.class, args);&#xD;
+  }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After running your app, hit &lt;code&gt;http://localhost:8080/ui&lt;/code&gt; to see the consul ui.&lt;/p&gt;&lt;p&gt;The &lt;a href="https://github.com/spring-cloud/spring-cloud-consul"&gt;code&lt;/a&gt; is hosted on github, and community contributions are extremely welcome, so get on over there are check it out. There is a sample in &lt;a href="https://github.com/spring-cloud/spring-cloud-consul/tree/master/spring-cloud-consul-sample"&gt;spring-cloud-consul-sample&lt;/a&gt;. Instructions to run the sample are included in the &lt;a href="https://github.com/spring-cloud/spring-cloud-consul/blob/master/README.adoc"&gt;README&lt;/a&gt;.&lt;/p&gt;&lt;h1&gt;&lt;a href="#springone-2gx-2015-is-around-the-corner" class="anchor" name="springone-2gx-2015-is-around-the-corner"&gt;&lt;/a&gt;SpringOne 2GX 2015 is around the corner!&lt;/h1&gt;&lt;p&gt;Book your place at &lt;a href="http://www.springone2gx.com"&gt;SpringOne2GX in Washington, DC soon&lt;/a&gt;. Super Early Bird Price expires June 12th! It&amp;rsquo;s simply the best opportunity to find out first hand all that&amp;rsquo;s going on and to provide direct feedback. I&amp;rsquo;ll be speaking about Spring Cloud Consul, watch &lt;a href="https://2015.event.springone2gx.com/presenters/spencer_gibb.html"&gt;here&lt;/a&gt; for future details. Check recent blog posts to see what I mean and there is more to come!&lt;/p&gt;&lt;h1&gt;&lt;a href="#discounts" class="anchor" name="discounts"&gt;&lt;/a&gt;Discounts&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;The Super Early Bird price tier ($300 discount) expires June 12th. The Early Bird price tier (June 13th - August 14th) is discounted $150.&lt;/li&gt;
+  &lt;li&gt;Register 4 and get the 5th pass free. Contact us with the names of your first 4 registrants for your complimentary pass code (conference admission only).&lt;/li&gt;
+  &lt;li&gt;Alumni, contact us for your discount code ($150 off any option).&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - May 26th, 2015</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/05/27/this-week-in-spring-may-26th-2015" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2015-05-27:2139</id>
+    <updated>2015-05-27T04:17:03Z</updated>
+    <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! There is a lot to talk about, so let&amp;rsquo;s get to it!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;First, the big news! Spring framework lead and OG Spring Guy Juergen Hoeller just announced that &lt;a href="http://spring.io/blog/2015/05/26/spring-framework-4-2-goes-rc1"&gt;Spring framework 4.2 RC1&lt;/a&gt; is now available! This new release includes lots of amazing new features so be sure to check it out! It includes anotation detection on Java 8 default methods, annotation-based application events, first-class annotation attibute aliases, nest path processing for direct field binding, data binding and conversion for JSR 354 (money and currency), Hibernate ORM 5.0 support (via JPA and natively), a STOMP client for use over TCP and WebSocket channels, &lt;code&gt;Listenable&lt;/code&gt;/&lt;code&gt;CompletableFuture&lt;/code&gt; as a message handler return value, CORS and declarative HTTP caching support, and much more. Get the bits, try it out, let&amp;rsquo;s make sure this is the best release yet!&lt;/li&gt;
+  &lt;li&gt;Spring Cloud Connectors lead Scott Frederick just announced that the &lt;a href="http://spring.io/blog/2015/05/22/spring-cloud-connectors-1-2-0-rc1-released"&gt;Spring Cloud Connectors 1.2.0 RC1&lt;/a&gt; has been released. The new release includes many, backwards compatible, changes and upgrades including support for HikariCP as a connection pool and a fix that removes the dreaded &lt;code&gt;ClassNotFoundException&lt;/code&gt; in certain rare circumstances! This upgrade is definitely worth an upgrade!&lt;/li&gt;
+  &lt;li&gt;Spring Data ninja and Spring for Apache Hadoop lead Thomas Risberg just announced &lt;a href="http://spring.io/blog/2015/05/21/spring-for-apache-hadoop-2-2-rc1-released"&gt;the last planned Spring for Apache Hadoop milestone release before 2.2.GA&lt;/a&gt; in approxmately 2 weeks. This release includes Cloudera CDH support, Hortonworks HDP 2.2 and 2.2.4.0 support, an updated Kite SDK, improvements to HDFS writer to support syncable writes and a new timeout option, and - usefully - this release requires Java 7 or greater.&lt;/li&gt;
+  &lt;li&gt;Check out Marius Bogoevici and Dr. Mark Pollack&amp;rsquo;s amazing webinar on &lt;a href="http://spring.io/blog/2015/05/20/webinar-replay-reactive-data-pipelines-with-spring-xd-and-kafka"&gt;reactive pipelines with Spring XD and Kafka&lt;/a&gt; from last week! Even if you saw it, you&amp;rsquo;ll want to check it out again. This one was filled with good stuff.&lt;/li&gt;
+  &lt;li&gt;Your humble author has been honored with the title of &lt;a href="https://blogs.oracle.com/java/entry/new_java_champion_josh_long"&gt;Java Champion&lt;/a&gt;. This title is bestowed on those who help advance the Java platform and nominations are made by other &lt;a href="https://java.net/website/java-champions/bios.html"&gt;Java champions&lt;/a&gt;. It is a rarified group and I don&amp;rsquo;t know that I&amp;rsquo;m worthy. I only mention it because it is the camaraderie I share with you - the most amazing community in the world - that makes it fun and exciting to keep doing it. Thank you my friends. &lt;em&gt;This Week in Spring&lt;/em&gt; is an almost 5 year chronicle of all the amazing things the community does to teach and inspire me and others. Thank you!&lt;/li&gt;
+  &lt;li&gt;ChargeAhead has an interesting two-part video of building a Spring Boot-based Spring MVC application. Here&amp;rsquo;s &lt;a href="https://www.youtube.com/watch?v=vgPkUVF862g"&gt;part 1&lt;/a&gt; and here&amp;rsquo;s &lt;a href="https://www.youtube.com/watch?v=BKF5eqPaIjU"&gt;part 2&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Driss Amri&lt;br/&gt; put together a nice post on &lt;a href="https://drissamri.be/blog/2015/05/21/spring-security-and-spring-session/"&gt;getting started with Spring Security, Spring Session and Redis &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=2aF5MoSci0U"&gt;Jose Diaz put together a video on using Angular.js, Twitter Bootstrap, Spring MVC, Spring Data and Spring Security together&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Cloud product manager Matt Stine put together a wonderful look at Spring Cloud &lt;a href="http://www.infoworld.com/article/2925047/application-development/build-self-healing-distributed-systems-with-spring-cloud.html"&gt;in this InfoWorld post&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The &lt;em&gt;Learning the code way&lt;/em&gt; blog has a post on how to &lt;a href="http://learningviacode.blogspot.com/2015/05/introducing-database-to-spring-batch.html"&gt;configure Spring Batch&amp;rsquo;s metadata database &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <title>Spring Framework 4.2 goes RC1</title>
     <link rel="alternate" href="https://spring.io/blog/2015/05/26/spring-framework-4-2-goes-rc1" />
@@ -837,36 +919,6 @@ public String redirect() {&#xD;
 &lt;p&gt;&#xD;
   &lt;iframe width="420" height="315" src="https://www.youtube.com/embed/aumgiP7fHCM" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&#xD;
 &lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne2GX 2014 Replays: Writing AST Transformations - Get Practical in 90 minutes</title>
-    <link rel="alternate" href="https://spring.io/blog/2015/05/12/springone2gx-2014-replays-writing-ast-transformations-get-practical-in-90-minutes" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2015-05-13:2120</id>
-    <updated>2015-05-12T23:02:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2014. &lt;/p&gt;
-&lt;p&gt;Speakers: Baruch Sadogursky, Frederic Simon - JFrog &lt;/p&gt;
-&lt;p&gt;Core Groovy Track &lt;/p&gt;
-&lt;p&gt;Slides: none all demo &lt;/p&gt;
-&lt;p&gt;You probably know how to use AST transformations. You might although think that writing your own AST transformations is something complicated, and takes deep knowledge of academical compliers, abstract syntax tree and other neat stuff.&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&#xD;
-  &lt;iframe width="420" height="315" src="https://www.youtube.com/embed/KC3MoRWt13k" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&#xD;
-&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>New in STS 3.7.0: Spring Boot Yaml Editor</title>
-    <link rel="alternate" href="https://spring.io/blog/2015/05/11/new-in-sts-3-7-0-spring-boot-yaml-editor" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Kris De Volder</name>
-    </author>
-    <id>tag:spring.io,2015-05-11:2117</id>
-    <updated>2015-05-11T18:39:11Z</updated>
-    <content type="html">&lt;p&gt;In STS 3.6.4 we introduced &lt;a href="https://drive.google.com/open?id=0B-E3P0EgKBcKdE9GY3RiMDZNb0E&amp;authuser=1"&gt;&amp;ldquo;.properties&amp;rdquo; editor support&lt;/a&gt;, for editing Spring Boot configuration properties.&lt;/p&gt;&lt;p&gt;Soon thereafter, people started asking about support for &amp;ldquo;.yml&amp;rdquo; files as well. We are proud to say that the &amp;ldquo;.yml&amp;rdquo; support is now reality.&lt;/p&gt;&lt;p&gt;Check out the &lt;a href="https://docs.google.com/file/d/0B-E3P0EgKBcKdE9GY3RiMDZNb0E/edit"&gt;5 minute video demo&lt;/a&gt; to see this in action:&lt;/p&gt;&lt;p&gt;The Spring Boot Yaml editor is built on top of &lt;a href="https://github.com/oyse/yedit"&gt;YEdit&lt;/a&gt;. STS adds boot-specific content-assist, validation, hover-infos and hyperlink detectors.&lt;/p&gt;&lt;p&gt;It can be tried out today from STS&amp;rsquo;s &lt;a href="https://github.com/spring-projects/spring-ide#installation-ci-builds"&gt;nightly update site&lt;/a&gt; and is planned to be released as part of STS 3.7.0 near the end of June 2015.&lt;/p&gt;</content>
   </entry>
 </feed>
 

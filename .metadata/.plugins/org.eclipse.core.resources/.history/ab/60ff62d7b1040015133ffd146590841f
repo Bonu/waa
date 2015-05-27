@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package edu.mum.mscs.waa.calculator.form;
+
+/**
+ * @author 984417
+ *
+ */
+public class CalculatorForm {
+
+	private int add1;
+	private int add2;
+	private int prd1;
+	private int prd2;
+	
+	private int sum;
+	private int product;
+	
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

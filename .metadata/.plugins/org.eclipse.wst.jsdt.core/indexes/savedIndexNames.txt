@@ -1,4 +1,17 @@
 INDEX VERSION 1.3+C:\data\repo\git\bitbucket\waa\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-4084692455.index
+3493967749.index
 3528303087.index
-2061813573.index
+2592147680.index
+346967562.index
+2761104474.index
+462383654.index
+1944235477.index
+88103685.index
+2246808027.index
+3423865542.index
+2508925741.index
+3984996470.index
+59267418.index
+2352114948.index
+1286661922.index
+780152262.index
