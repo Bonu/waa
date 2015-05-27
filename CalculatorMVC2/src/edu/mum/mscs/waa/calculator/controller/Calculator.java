@@ -1,4 +1,4 @@
-package edu.mum.mscs.waa.calculator.domain;
+package edu.mum.mscs.waa.calculator.controller;
 
 import java.io.IOException;
 
