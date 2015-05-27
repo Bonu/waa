@@ -1,0 +1,7 @@
+<classpath>
+  <container id="CalculatorServlet2!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="C:/data/repo/git/bitbucket/waa/CalculatorServlet2/WebContent/WEB-INF/lib/servlet-api.jar">
+      <source-attachment-path>C:/data/tools/apache-tomcat-8.0.23-src.zip</source-attachment-path>
+    </entry>
+  </container>
+</classpath>
