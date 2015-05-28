@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -13,6 +14,7 @@ import edu.mum.mscs.waa.lab4.calculatorspringmvc.domain.Calculator;
 import edu.mum.mscs.waa.lab4.calculatorspringmvc.service.CalculatorService;
 import edu.mum.mscs.waa.lab4.calculatorspringmvc.validator.CalculatorValidator;
 
+@Controller
 public class CalculatorController {
 
 	@Autowired
@@ -20,13 +22,14 @@ public class CalculatorController {
 
 	@Autowired
 	CalculatorService calculatorService;
-
-	@RequestMapping(value = { "/", "/calculator" }, method = RequestMethod.GET)
+	 
+	@RequestMapping(value = { "/", "/calcHandle" }, method = RequestMethod.GET)
 	public String inputCalc(Calculator calculator) {
+		System.out.println("Inside inputcalc");
 		return "CalculatorForm";
 	}
 
-	@RequestMapping(value = "/calculator", method = RequestMethod.POST)
+	@RequestMapping(value = "/calcHandle", method = RequestMethod.POST)
 	public String handleCalc(Calculator calculator, HttpServletRequest request,
 			HttpServletResponse response) {
 

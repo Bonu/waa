@@ -22,7 +22,7 @@
 		<input name="add4" type="text" size = "2" readonly   value="${calculator.mult2}"/>=
 		<input name="product" type="text" size = "4" readonly value="${calculator.product}"/>
 		<br>		
-		 <button type=button onclick=window.location.href="calcInput">Back</button>
+		 <button type=button onclick=window.location.href="calcHandle">Back</button>
 	</form>
 </div>
 </body>

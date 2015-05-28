@@ -3,8 +3,11 @@ package edu.mum.mscs.waa.lab4.calculatorspringmvc.validator;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import edu.mum.mscs.waa.lab4.calculatorspringmvc.domain.Calculator;
 
+@Service
 public class CalculatorValidatorImpl implements CalculatorValidator {
 	
 	public List<String> validate(Object  object ) {

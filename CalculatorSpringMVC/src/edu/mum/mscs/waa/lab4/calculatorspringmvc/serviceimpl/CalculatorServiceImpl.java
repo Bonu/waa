@@ -1,9 +1,11 @@
 package edu.mum.mscs.waa.lab4.calculatorspringmvc.serviceimpl;
 
+import org.springframework.stereotype.Service;
+
 import edu.mum.mscs.waa.lab4.calculatorspringmvc.domain.Calculator;
 import edu.mum.mscs.waa.lab4.calculatorspringmvc.service.CalculatorService;
 
- 
+@Service
 public class CalculatorServiceImpl implements CalculatorService  {
 	
 	public void add(Calculator calculator){
