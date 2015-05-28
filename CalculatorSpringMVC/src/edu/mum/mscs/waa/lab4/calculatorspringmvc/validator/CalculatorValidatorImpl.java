@@ -30,8 +30,7 @@ public class CalculatorValidatorImpl implements CalculatorValidator {
  		if (calculator.getMult2() == null) {
 			errors.add("Multiply operands must have a value");
 		} 
-		
-		
+				
 		return errors;
 	}
 }
