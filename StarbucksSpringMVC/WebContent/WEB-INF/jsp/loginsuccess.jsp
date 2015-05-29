@@ -7,7 +7,7 @@
 <body>
 <h2>Login Successful</h2>
 <p />
-<form action="adviceroast" method="get">
+<form action="roastadvice" method="get">
 <input type = "submit" value = "Back"/>
 </form>
 </body>

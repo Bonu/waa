@@ -6,8 +6,8 @@
 <body>
 <h2>Ask for advice about your favorite roast:</h2>
 <p />
-<form action = "advice.do" method="post">
-<select name="roast"   >
+<form action = "roastadvice" method="post">
+<select name="roastAdvice"   >
   <option value="-">--Choose Roast--</option>
   <option value="dark">Dark</option>
   <option value="medium">Medium</option>

@@ -9,11 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>Starbuck's ${param["roast"]} Roast Coffees:</h2>
+	<h2>Starbuck's ${param["roastAdvice"]} Roast Coffees:</h2>
 	<form action="advice.do" method="get">
  		
 <table >
- <c:forEach var="coffee" items="${roastList}" varStatus="status">
+ <c:forEach var="advice" items="${advices}" varStatus="status">
  
 	<c:choose>
   		<c:when test="${(status.index)%2 eq 0}">
@@ -23,7 +23,7 @@
     		<tr style="background-color:yellow">
     	 </c:otherwise>
 	 </c:choose> 
-				<td>${coffee}</td>
+				<td>${advice}</td>
 			</tr>
   </c:forEach>
 </table>	
