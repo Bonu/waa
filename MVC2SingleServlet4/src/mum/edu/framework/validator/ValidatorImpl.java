@@ -1,11 +1,10 @@
-package mum.edu.validator;
+package mum.edu.framework.validator;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import mum.edu.domain.Product;
 import mum.edu.form.ProductForm;
-import mum.edu.framework.validator.Validator;
 
 public class ValidatorImpl implements Validator {
 	

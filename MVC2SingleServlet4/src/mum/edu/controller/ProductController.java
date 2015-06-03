@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import mum.edu.domain.Product;
 import mum.edu.framework.annotation.AutoWired;
+import mum.edu.framework.annotation.ResourceMapping;
 import mum.edu.framework.controller.Controller;
 import mum.edu.framework.validator.Validator;
 
@@ -20,6 +21,7 @@ public class ProductController implements Controller {
 		return "/WEB-INF/jsp/ProductForm.jsp";
 	}
 
+ 	@ResourceMapping(value="/product_save")
 	public String saveProduct(Product product, HttpServletRequest request, 
 			HttpServletResponse response) {
  //        ProductValidator productValidator = new ProductValidator();
