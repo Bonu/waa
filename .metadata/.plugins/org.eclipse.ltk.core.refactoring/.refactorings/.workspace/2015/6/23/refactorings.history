@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 6 resources" deleteContents="false" description="Delete 6 resources" element1="/AssessmentSystem/WebContent/WEB-INF/jsp/cookieDetails.jsp" element2="/AssessmentSystem/WebContent/WEB-INF/jsp/dogSession.jsp" element3="/AssessmentSystem/WebContent/WEB-INF/jsp/dogSessionDetails.jsp" element4="/AssessmentSystem/WebContent/WEB-INF/jsp/ProductDetails.jsp" element5="/AssessmentSystem/WebContent/WEB-INF/jsp/ProductForm.jsp" element6="/AssessmentSystem/WebContent/WEB-INF/jsp/session.jsp" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="6" stamp="1433350123710"/>
+</session>

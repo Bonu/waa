@@ -13,7 +13,7 @@ public class ProcessAnnotations {
 	/*
 	 * Loop through Controllers looking for Annotations [@Autowired)
 	 */
-	public static void handleAnnotations(Map<String,Controller> controllers ) {
+	public static void handleAnnotations( Map<String,Controller> controllers, Map<String,Controller> dispatchers ) {
 		
 		Set<String> keys = (Set<String>) controllers.keySet();
 		
@@ -31,6 +31,7 @@ public class ProcessAnnotations {
 						//get the value string
 						String value = resourceMapping.value();
 						System.out.println("The value is:"+ value);
+						
 					}
 				}
 			}
@@ -51,7 +52,6 @@ public class ProcessAnnotations {
 					}
 				}
 			}
-
 		}
 	}
 }

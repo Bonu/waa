@@ -1,0 +1,50 @@
+package edu.mum.mscs.waa.lab4.calculatorspringmvc.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import edu.mum.mscs.waa.lab4.calculatorspringmvc.domain.Calculator;
+import edu.mum.mscs.waa.lab4.calculatorspringmvc.service.CalculatorService;
+import edu.mum.mscs.waa.lab4.calculatorspringmvc.validator.CalculatorValidator;
+
+public class CalculatorController {
+	
+	@Autowired
+	CalculatorValidator calculatorValidator;
+	
+	@Autowired
+	CalculatorService calculatorService;
+	
+	@RequestMapping(value={"/","/"},method=)
+	  public String inputCalc(Calculator calculator)   {		  
+	       return  "/WEB-INF/jsp/CalculatorForm.jsp" ;    
+	   }
+	   
+	  
+ 	  public String handleCalc(Calculator calculator, HttpServletRequest request, 
+ 				HttpServletResponse response )   {
+	  
+ 		  
+ 	        List<String> errors = calculatorValidator.validate(calculator);
+ 	        if (errors.isEmpty()) {
+ 	        	
+			     calculatorService.add(calculator);
+ 			     calculatorService.mult(calculator);
+ 			    	        	 
+  	            request.setAttribute("calculator", calculator);
+ 	            return "/WEB-INF/jsp/CalculatorView.jsp";
+ 	        } else {
+ 	  
+ 	            // store errors and calculator in a scope variable for the view
+ 	            request.setAttribute("errors", errors);
+ 	            request.setAttribute("calculator", calculator);
+ 	            return "/WEB-INF/jsp/CalculatorForm.jsp";
+ 	        }
+
+  	   }
+	   
+}

@@ -74,10 +74,9 @@ public class ConfigureServlet {
 					  }
 	        	}
 	        }
-	    	
  	    	
  	    	// Process Annotations
- 	    	ProcessAnnotations.handleAnnotations(controllers);
+ 	    	ProcessAnnotations.handleAnnotations(controllers,dispatchers);
     	
 	    	return ;
 	  }

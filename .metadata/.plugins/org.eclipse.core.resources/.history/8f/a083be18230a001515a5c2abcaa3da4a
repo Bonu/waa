@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package edu.mum.cs.waa.fp.as.controller;
+
+/**
+ * @author 984417
+ *
+ */
+@Controller
+public class BaseController {
+
+	
+	
+	
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

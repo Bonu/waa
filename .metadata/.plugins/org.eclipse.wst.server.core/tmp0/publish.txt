@@ -1,3 +1,4 @@
 #Tomcat publish data
-#Wed May 27 13:41:19 CDT 2015
-org.eclipse.jst.jee.server\:MVC2Demo=C\:\\data\\sts-bundle\\pivotal-tc-server-developer-3.1.0.RELEASE\\waa\\wtpwebapps\\MVC2Demo
+#Wed Jun 03 14:26:30 CDT 2015
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\984417\\.m2\\repository\\org\\springframework\\spring-web\\4.0.3.RELEASE\\spring-web-4.0.3.RELEASE.jar=C\:\\data\\sts-bundle\\pivotal-tc-server-developer-3.1.0.RELEASE\\waa\\wtpwebapps\\AssessmentSystem\\WEB-INF\\lib\\spring-web-4.0.3.RELEASE.jar
+org.eclipse.jst.jee.server\:AssessmentSystem=C\:\\data\\sts-bundle\\pivotal-tc-server-developer-3.1.0.RELEASE\\waa\\wtpwebapps\\AssessmentSystem

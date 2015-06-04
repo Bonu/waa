@@ -1,2 +1,3 @@
-commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>-u</message>\r\n<message>-U</message>\r\n</messages>
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>Merge branch &apos;master&apos; of https\://github.com/Bonu/AssessmentSystem.git</message>\r\n<message>Initial test version &\#x0A;Java 1.8&\#x0A;Maven based&\#x0A;Spring project</message>\r\n<message>-u</message>\r\n<message>-U</message>\r\n<message>Day4</message>\r\n</messages>
 eclipse.preferences.version=1
+show_initial_config_dialog=false

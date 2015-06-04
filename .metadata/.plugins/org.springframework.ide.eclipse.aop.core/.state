@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aop-reference-model/>
+<aop-reference-model>
+<aop-project name="ProductSessionDemo"/>
+<aop-project name="Product4aSpringTaglib"/>
+<aop-project name="Lab6_Starbucks"/>
+<aop-project name="AssessmentSystem"/>
+</aop-reference-model>
