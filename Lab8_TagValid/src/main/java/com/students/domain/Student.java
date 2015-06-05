@@ -14,18 +14,19 @@ public class Student {
 	
 	private int studentId;
 	
-	@NotEmpty
+	@NotEmpty(message="{field.empty.errormessage}")
 	@Size(min=4, max=50, message="{name.size.errormessage}")
  	private String firstName = null;
 	
-	@NotEmpty
+	@NotEmpty(message="{field.empty.errormessage}")
 	@Size(min=4, max=50, message="{name.size.errormessage}")
  	private  String lastName  = null;
 	
+	@NotEmpty(message="{field.empty.errormessage}")
 	@Email
 	private String email = null;
 
-	@NotEmpty
+	@NotEmpty(message="{field.empty.errormessage}")
 	@Size(min=4, max=6, message="{gender.errormessage}")
  	private String gender = null;
 	

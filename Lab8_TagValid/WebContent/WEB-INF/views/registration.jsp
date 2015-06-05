@@ -9,20 +9,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Registration</title>
-
-<style>
-.error {
-	color: #ff0000;
-}
-
-.errorblock {
-	color: #000;
-	background-color: #ffEEEE;
-	border: 3px solid #ff0000;
-	padding: 8px;
-	margin: 16px;
-}
-</style>
+<style type="text/css">@import url("<c:url value="/css/main.css"/>");</style>
 
 </head>
 <body>
@@ -31,27 +18,32 @@
 	<br />
 	<form:form modelAttribute="student" action="registration" method="post">
 	<table>
-		<tr><td><form:errors path="*" cssClass="errorblock" element="div" /></td></tr>
+		<tr><td><form:errors path="*"  cssStyle="color : red;" /></td></tr>
 		<tr><td><label for="studentId"> <spring:message code="student.id.label"/> </label>
-		<form:input id="studentId" path="studentId" /><br /><form:errors path="studentId" cssClass="errorblock" element="div" /></td></tr>
+		<form:input id="studentId" path="studentId" /><br /><form:errors path="studentId"  cssStyle="color : red;" /></td></tr>
 		<tr><td><label for="firstName"> <spring:message code="student.firstname.label"/> </label>
-		<form:input id="firstName" path="firstName" /><br /><form:errors path="firstName" cssClass="errorblock" element="div" /></td></tr>
+		<form:input id="firstName" path="firstName" /><br /><form:errors path="firstName"  cssStyle="color : red;" /></td></tr>
 		<tr><td><label for="lastName"> <spring:message code="student.lastname.label"/> </label>
-		<form:input id="lastName" path="lastName" /><br /><form:errors path="lastName" cssClass="errorblock" element="div" /></td></tr>
+		<form:input id="lastName" path="lastName" /><br /><form:errors path="lastName"  cssStyle="color : red;" /></td></tr>
 		<tr><td><label for="email"> <spring:message code="student.email.label"/> </label>
-		<form:input id="email" path="email" /><br /><form:errors path="email" cssClass="errorblock" element="div" /></td></tr>
+		<form:input id="email" path="email" /><br /><form:errors path="email"  cssStyle="color : red;" /></td></tr>
 		<tr><td><label for="gender"> <spring:message code="student.gender.label"/> </label>
-		<form:input id="gender" path="gender" /><br /><form:errors path="gender" cssClass="errorblock" element="div" /></td></tr>
+		<form:select id="gender" path="gender">
+			<form:option value="">Select Gender</form:option>
+			<form:option value="MALE">Male</form:option>
+			<form:option value="FEMALE">Female</form:option>
+		</form:select>
+		<br /><form:errors path="gender"  cssStyle="color : red;" /></td></tr>
 		<tr><td><label for="birthday"> <spring:message code="student.birthday.label"/> </label>
-		<form:input id="birthday" path="birthday" /><br /><form:errors path="birthday" cssClass="errorblock" element="div" /></td></tr>
+		<form:input id="birthday" path="birthday" /><br /><form:errors path="birthday"  cssStyle="color : red;" /></td></tr>
 		<tr><td><label for="phone"> <spring:message code="student.phone.label"/> </label>
 		<form:input id="phone.area" path="phone.area" />
 		<form:input id="phone.prefix" path="phone.prefix" />
 		<form:input id="phone.number" path="phone.number" /><br />
 		
-		<form:errors path="phone.area" cssClass="errorblock" element="div" />
-		<form:errors path="phone.prefix" cssClass="errorblock" element="div" />
-		<form:errors path="phone.number" cssClass="errorblock" element="div" />
+		<form:errors path="phone.area"  cssStyle="color : red;" />
+		<form:errors path="phone.prefix"  cssStyle="color : red;" />
+		<form:errors path="phone.number"  cssStyle="color : red;" />
 		</td></tr>
 		<tr><td><input type="submit" value="Add Student"/></td></tr>
 		</table>
