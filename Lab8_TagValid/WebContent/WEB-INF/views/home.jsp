@@ -14,7 +14,8 @@
 
 <button onclick="window.location='<spring:url value="/registration" />' ">
      Student Registration</button>
-
+<button onclick="window.location='<spring:url value="/adduser" />' ">
+     User Registration</button>
 </p>
 </body>
 </html>

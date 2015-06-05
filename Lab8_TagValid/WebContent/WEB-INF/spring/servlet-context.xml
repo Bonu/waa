@@ -19,8 +19,7 @@
 	<mvc:resources location="/css/" mapping="/cssFolder/**" />
 
 
-	<bean id="messageSource"
-		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basename" value="classpath:errorMessages" />
 	</bean>
 
@@ -28,7 +27,6 @@
 		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
 		<property name="validationMessageSource" ref="messageSource" />
 	</bean>
-	
  
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
