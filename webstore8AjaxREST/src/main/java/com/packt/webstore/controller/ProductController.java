@@ -138,10 +138,5 @@ public class ProductController {
 	public String invalidPromoCode() {
 			return "invalidPromoCode";
 	}
-	
-	
-
-	
-	
-	
+		
 }
