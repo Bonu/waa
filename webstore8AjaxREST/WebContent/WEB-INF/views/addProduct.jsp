@@ -67,19 +67,21 @@
 					<label class="control-label col-lg-2" for="manufacturer">
 					<spring:message code="addProduct.form.manufacturer.label"/></label>
 					<div class="col-lg-10">
-						<form:input id="manufacturer" path="manufacturer" type="text" class="form:input-large"/>
 						<label for="manufacturer">manufacturer </label>
-				 		 	<select name="manufacturer" onchange="getCategoriesAJAX('${manufacturer}')">
-						    	<option value="DELL" >DELL</option>
-						    	<option value="GOOGLE" >GOOGLE</option>
-						    </select>
+				 		 	<form:select id="manufacturer" path="manufacturer" onchange="getCategoriesAJAX('${manufacturer}')">
+						    	<form:option value="dell">dell</form:option>
+						    	<form:option value="google">google</form:option>
+						    	<form:option value="amazon">amazon</form:option>
+						    </form:select>
 					</div>
 				</div>
 
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="category"><spring:message code="addProduct.form.category.label"/></label>
 					<div class="col-lg-10">
-						<form:input id="category" path="category" type="text" class="form:input-large"/>
+						<form:select id="category" path="category" class="form:input-large">
+							<form:option value="-">-Please select-</form:option>
+						</form:select>
 					</div>
 				</div>
 

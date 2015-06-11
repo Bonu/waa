@@ -2,22 +2,25 @@ $(document).ready(function() {
 	
 	var cartId;
 	
-	getCategoriesAJAX = function(manufacturer){
+	getCategoriesAJAX = function(){
+		var selectedValue = $("#manufacturer").val();
+		alert(selectedValue)
 		$.ajax({
-	 		url: '/webstore8AjaxREST/products/getcategory/',
+			type:'GET',
+			url: '/webstore8AjaxREST/getcategory/'+selectedValue,
 	 		data: "manufacturer="+manufacturer,
-	 		type: 'PUT',
-			success: function(response){
- 		 		alert("Received the categories Successfully !");
- 		 		for(i =0 ; i < response.result.length ; i++){
- 		 			    userInfo += "<br><li><b>Name</b> : " + response.result[i].name +
- 		 			                    ";<b> Education</b> : " + response.result[i].education;
- 		 			  }
-
-
+			success: function(data,status,jqXHR){
+ 		 		alert(data);
+ 		 		var arr = data;
+ 		 		alert(arr);
+ 		 		var select = $('#category');
+ 		 		select.find('option').remove();
+ 		 		$.each( arr, function(index, value ) {
+ 		 			$('<option>').val(value).text(value).appendTo(select);
+ 		 		});
 			},
-			error: function(){						
-				alert('Error while request categories..');
+			error: function(jqXHR, status){						
+				alert('Error while request categories..'+status);
 			}
 		});
 	}

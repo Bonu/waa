@@ -88,10 +88,6 @@ public class ProductController {
 	
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String getAddNewProductForm(@ModelAttribute("newProduct") Product newProduct, Model model) {
-		List<String > manufacturer = new ArrayList<String>();  
-		manufacturer.add("DELL");  
-		manufacturer.add("GOOGLE");
-		model.addAttribute("manufacturer", manufacturer);
 	   return "addProduct";
 	}
 	   
