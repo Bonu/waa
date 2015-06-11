@@ -67,7 +67,6 @@
 					<label class="control-label col-lg-2" for="manufacturer">
 					<spring:message code="addProduct.form.manufacturer.label"/></label>
 					<div class="col-lg-10">
-						<label for="manufacturer">manufacturer </label>
 				 		 	<form:select id="manufacturer" path="manufacturer" onchange="getCategoriesAJAX('${manufacturer}')">
 						    	<form:option value="dell">dell</form:option>
 						    	<form:option value="google">google</form:option>
