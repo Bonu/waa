@@ -62,7 +62,28 @@
 						<form:textarea id="description" path="description" rows = "2"/>
 					</div>
 				</div>
-
+				
+				<div class="form-group">
+					<label class="control-label col-lg-2" for="description">
+					checkbox1text</label>
+					
+					<div class="col-lg-10">
+						<input type="checkbox" id="checkbox1"  onclick="oncheck1()" />
+						<textarea id="checkbox1text" rows = "1"></textarea>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-lg-2" for="description">
+					checkbox1text</label>
+					
+					<div class="col-lg-10">
+						<input type="checkbox" id="checkbox2" onclick="oncheck2()" />
+						<textarea id="checkbox2text" rows = "1"></textarea>
+					</div>
+				</div>
+				
+				
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="manufacturer">
 					<spring:message code="addProduct.form.manufacturer.label"/></label>

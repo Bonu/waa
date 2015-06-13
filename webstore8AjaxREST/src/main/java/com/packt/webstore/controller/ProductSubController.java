@@ -33,4 +33,28 @@ public class ProductSubController {
 		return cats;
 	}
 	
+	@RequestMapping(value="/getcheck1", method = RequestMethod.GET)
+	public  @ResponseBody String checkbox1(Model model) {
+		System.out.println("Service invoked -- checkbox1 :");
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "Checkbox1Clicked";
+	}
+	
+	@RequestMapping(value="/getcheck2", method = RequestMethod.GET)
+	public  @ResponseBody String checkbox2(Model model) {
+		System.out.println("Service invoked -- checkbox2 - after 2 seconds :");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "Checkbox2Clicked";
+	}
+	
 }

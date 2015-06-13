@@ -24,8 +24,38 @@ $(document).ready(function() {
 			}
 		});
 	}
-
 	
+	oncheck1 = function(){
+		
+		$.ajax({
+			type:'GET',
+			url: '/webstore8AjaxREST/getcheck1/',
+			success: function(data,status,jqXHR){
+ 		 		
+ 		 		var select = $('#checkbox1text');
+ 		 		$('#checkbox1text').val(data)
+			},
+			error: function(jqXHR, status){						
+				alert('Error while request categories..'+status);
+			}
+		});
+	}
+	
+	
+	oncheck2 = function(){
+		$.ajax({
+			type:'GET',
+			url: '/webstore8AjaxREST/getcheck2/',
+			success: function(data,status,jqXHR){
+ 		 		
+ 		 		var select = $('#checkbox2text');
+ 		 		$('#checkbox2text').val(data)
+			},
+			error: function(jqXHR, status){						
+				alert('Error while request categories..'+status);
+			}
+		});
+	}
 	addToCart = function(productId){
 			$.ajax({
 		 		url: '/webstore8AjaxREST/rest/cart/add/' + productId,
